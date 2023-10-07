@@ -1,0 +1,59 @@
+import java.util.Scanner;
+
+public class RomanToIntegerApproach2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a Roman Numeral (e.g., IX): ");
+        String romanNumeral = scanner.nextLine().toUpperCase();
+        int integerEquivalent = convertRomanToInteger(romanNumeral);
+        System.out.println("Integer Equivalent: " + integerEquivalent);
+        scanner.close();
+    }
+
+    public static int convertRomanToInteger(String s) {
+        int result = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            char currentChar = s.charAt(i);
+            char nextChar = (i + 1 < s.length()) ? s.charAt(i + 1) : ' ';
+
+            switch (currentChar) {
+                case 'I':
+                    if (nextChar == 'V' || nextChar == 'X') {
+                        result -= 1;
+                    } else {
+                        result += 1;
+                    }
+                    break;
+                case 'V':
+                    result += 5;
+                    break;
+                case 'X':
+                    if (nextChar == 'L' || nextChar == 'C') {
+                        result -= 10;
+                    } else {
+                        result += 10;
+                    }
+                    break;
+                case 'L':
+                    result += 50;
+                    break;
+                case 'C':
+                    if (nextChar == 'D' || nextChar == 'M') {
+                        result -= 100;
+                    } else {
+                        result += 100;
+                    }
+                    break;
+                case 'D':
+                    result += 500;
+                    break;
+                case 'M':
+                    result += 1000;
+                    break;
+            }
+        }
+
+        return result;
+    }
+}

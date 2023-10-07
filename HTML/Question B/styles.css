@@ -1,0 +1,76 @@
+/* styles.css */
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group select,
+.form-group input[type="email"],
+.form-group input[type="tel"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group label,
+.form-group input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.form-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.popup-content {
+    background-color: #fff;
+    width: 80%;
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#popup-list {
+    list-style: none;
+    padding: 0;
+}
+
+#popup-list li {
+    margin-bottom: 10px;
+}

@@ -1,0 +1,16 @@
+const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.question("Enter an array of numbers separated by spaces: ", function(input) {
+    const inputArray = input.split(' ').map(Number);
+
+    // Sort the array in descending order using the sort() function
+    inputArray.sort((a, b) => b - a);
+
+    console.log("Sorted Array in Descending Order: " + inputArray.join(' '));
+
+    rl.close();
+});

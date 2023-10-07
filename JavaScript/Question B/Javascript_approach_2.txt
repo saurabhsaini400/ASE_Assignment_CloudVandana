@@ -1,0 +1,33 @@
+function descendingBubbleSort(arr) {
+    const n = arr.length;
+
+    for (let i = 0; i < n - 1; i++) {
+        for (let j = 0; j < n - i - 1; j++) {
+            if (arr[j] < arr[j + 1]) {
+                // Swap arr[j] and arr[j+1]
+                const temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
+
+const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.question("Enter an array of numbers separated by spaces: ", function(input) {
+    // Split the user input into an array of numbers
+    const inputArray = input.split(' ').map(Number);
+
+    // Perform descending bubble sort on the input array
+    descendingBubbleSort(inputArray);
+
+    // Display the sorted array
+    console.log("Sorted Array in Descending Order: " + inputArray.join(' '));
+
+    rl.close();
+});
